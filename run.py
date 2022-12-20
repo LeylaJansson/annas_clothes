@@ -32,13 +32,23 @@ def calculate_surplus_data():
         surplus_data.append(surplus)
     return surplus_data
 
+def update_worksheet(data,worksheet):
+    """
+    Update relevant worksheet
+    """
+    print(f"Updating {worksheet} worksheet\n")
+    worksheet_to_update = SHEET.worksheet(worksheet)
+    worksheet_to_update.append_row(data)
+    print(f"{worksheet} worksheet updated successfully\n"
+
 
 def main():
     """
     Run all program functions
     """
     new_surplus_data = calculate_surplus_data()
-    print(new_surplus_data)
+    update_worksheet(new_surplus_data, "surplus")
+    update_worksheet("stock")
 
 
 main()
