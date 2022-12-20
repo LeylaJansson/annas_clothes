@@ -1,31 +1,23 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Anna's Clothes
 
-Welcome LeylaJansson,
+Anna's Clothes is a small charity shop run by four women; Ann-Marie, Natalie, Natasha and Alma. They spend their free time knitting clothes to sell during their town's
+winter market, then donate the money to a charity for families in need. The money helps families in need and the sold knitwear is popular gifts, or for use of the buyer themselves!
+The program aims to help keep track of sales, surplus and stock, as well as calculate how much stock needs to be done each year. Anna's clothes see being sold out of any type of item as a fail, as there could've been more sales done if they had more stock. On the other hand they do not want too much surplus, even if the surplus is counted into next year's stock.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
 
-## Reminders
+## Features 
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+The program takes the sales data provided by the user, calculates surplus and stock for next year. It also updates the sheet for the client.
 
-## Creating the Heroku app
+## Testing 
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+I have tested the program to the best of my ability, and found no bugs.
 
-1. `heroku/python`
-2. `heroku/nodejs`
+## Deployment
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+I followed the recommended video from the Love Sandwiches code along project to deploy this program to Heroku, as told.
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+## Credits 
 
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
------
-Happy coding!
+Code institute taught me the code used in this project. 
+Templates used came from Code institute.
