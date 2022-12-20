@@ -1,6 +1,3 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
 import gspread
 from google.oauth2.service_account import Credentials
 
@@ -15,8 +12,33 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open("anna'sclothes")
 
-sales = SHEET.worksheet('sales')
 
-data = sales.get_all_values()
+def calculate_surplus_data():
+    """
+    Calculate surplus for each item type.
+    Surplus is defined as stock - sales.
+    0 indicates client missed out on sales due to running out of stock.
+    Positive surplus means the items can be counted into next year's stock.
+    """
+    print("Calculating surplus data\n")
+    stock = SHEET.worksheet("stock").get_all_values()
+    stock_row = stock[-1]
+    sales = SHEET.worksheet("sales").get_all_values()
+    sales_row = sales[-1]
 
-print(data)
+    surplus_data = []
+    for stock, sales in zip(stock_row, sales_row):
+        surplus = int(stock) - int(sales)
+        surplus_data.append(surplus)
+    return surplus_data
+
+
+def main():
+    """
+    Run all program functions
+    """
+    new_surplus_data = calculate_surplus_data()
+    print(new_surplus_data)
+
+
+main()
